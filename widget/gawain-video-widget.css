@@ -1,0 +1,244 @@
+.gawain-video-section {
+  margin: 2rem 0;
+  min-height: 60px;
+}
+
+.gawain-carousel-wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.gawain-carousel-heading {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+  letter-spacing: -0.01em;
+}
+
+.gawain-carousel-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+}
+
+.gawain-carousel-track {
+  display: flex;
+  gap: 1rem;
+  min-width: min-content;
+}
+
+.gawain-video-card {
+  flex-shrink: 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  background: #000;
+}
+
+/* Video wrapper — positions overlay controls */
+.gawain-video-wrap {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gawain-video-player {
+  display: block;
+  object-fit: cover;
+}
+
+.gawain-video-title {
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* === Controls Overlay === */
+.gawain-video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Control buttons (mute, expand) */
+.gawain-ctrl-btn {
+  position: absolute;
+  pointer-events: auto;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gawain-ctrl-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.gawain-video-wrap:hover .gawain-ctrl-btn,
+.gawain-ctrl-btn.gawain-active {
+  opacity: 1;
+}
+
+.gawain-ctrl-btn:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* Always show mute button on mobile (no hover) */
+@media (hover: none) {
+  .gawain-ctrl-btn {
+    opacity: 0.8;
+  }
+}
+
+.gawain-mute-btn {
+  bottom: 8px;
+  left: 8px;
+}
+
+.gawain-expand-btn {
+  bottom: 8px;
+  right: 8px;
+}
+
+/* Center icon (play/pause/unmute indicator) */
+.gawain-center-icon {
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gawain-center-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.gawain-center-icon.gawain-fade {
+  animation: gawain-icon-fade 0.8s ease forwards;
+}
+
+@keyframes gawain-icon-fade {
+  0%   { opacity: 1; }
+  60%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* === Fullscreen Modal === */
+.gawain-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: gawain-backdrop-in 0.2s ease;
+}
+
+@keyframes gawain-backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.gawain-modal {
+  position: relative;
+  max-width: 420px;
+  max-height: 90vh;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: gawain-modal-in 0.25s ease;
+}
+
+@keyframes gawain-modal-in {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.gawain-modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gawain-modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.gawain-modal-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+.gawain-modal-video {
+  width: 100%;
+  max-height: 80vh;
+  border-radius: 0.75rem;
+  object-fit: contain;
+  background: #000;
+}
+
+.gawain-modal-title {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+/* Scrollbar styling for WebKit browsers */
+.gawain-carousel-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.gawain-carousel-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gawain-carousel-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+
+.gawain-carousel-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}

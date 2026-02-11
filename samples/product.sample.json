@@ -1,0 +1,42 @@
+{
+  "id": "1729384756012345",
+  "title": "Premium Wireless Earbuds",
+  "description": "Experience immersive sound with these premium wireless earbuds. Features include ANC, 30-hour battery life, and IPX5 water resistance.",
+  "category_list": [
+    { "id": "601226", "name": "Earphones & Headphones" }
+  ],
+  "brand": {
+    "id": "7001",
+    "name": "AudioTech"
+  },
+  "main_images": [
+    { "url_list": ["https://example.com/images/earbuds-front.jpg"], "width": 800, "height": 800 },
+    { "url_list": ["https://example.com/images/earbuds-case.jpg"], "width": 800, "height": 800 },
+    { "url_list": ["https://example.com/images/earbuds-lifestyle.jpg"], "width": 800, "height": 800 }
+  ],
+  "skus": [
+    {
+      "id": "1729384756012345-001",
+      "seller_sku": "EARBUDS-BLK",
+      "price": {
+        "original_price": "12800",
+        "sale_price": "9800",
+        "currency": "JPY"
+      },
+      "stock_infos": [{ "available_stock": 100 }]
+    },
+    {
+      "id": "1729384756012345-002",
+      "seller_sku": "EARBUDS-WHT",
+      "price": {
+        "original_price": "12800",
+        "sale_price": "9800",
+        "currency": "JPY"
+      },
+      "stock_infos": [{ "available_stock": 50 }]
+    }
+  ],
+  "status": 4,
+  "create_time": 1700000000,
+  "update_time": 1700100000
+}

@@ -47,6 +47,7 @@ describe('GET /connect/tiktok/start', () => {
     expect(res.headers['location']).toContain('services.tiktokshop.com/open/authorize');
     expect(res.headers['location']).toContain('app_key=test_app_key');
     expect(res.headers['location']).toContain('state=');
+    expect(res.headers['location']).toContain('redirect_uri=');
 
     // Should set httpOnly cookie
     const cookies = res.headers['set-cookie'];

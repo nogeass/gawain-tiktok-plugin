@@ -39,6 +39,9 @@ export function buildAuthUrl(config: TikTokAuthConfig, state: string): string {
   const url = new URL(TIKTOK_AUTH_URL);
   url.searchParams.set('app_key', config.appKey);
   url.searchParams.set('state', state);
+  if (config.redirectUri) {
+    url.searchParams.set('redirect_uri', config.redirectUri);
+  }
   return url.toString();
 }
 

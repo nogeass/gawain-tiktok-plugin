@@ -23,6 +23,7 @@ export function oauthRouter(config: ConnectorConfig, tokenStore: TokenStore): Ro
   const authConfig: TikTokAuthConfig = {
     appKey: config.tiktokAppKey,
     appSecret: config.tiktokAppSecret,
+    redirectUri: config.callbackUrl,
   };
 
   /**
